@@ -1,157 +1,184 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import { TextField, Button, Typography } from '@mui/material';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+/// Material UI Icon
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
+/// material UI List 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import InboxIcon from '@mui/icons-material/Inbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
 
 function Navbar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-  
-    const handleOpenNavMenu = (event) => {
-      setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-    };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
+  const [open1, setOpen1] = React.useState(false)
+  const [open2, setOpen2] = React.useState(false)
+  const [open3, setOpen3] = React.useState(false)
+
+  const setClicked1 = () => {
+    setOpen1(!open1)
+    console.log(open1)
+  }
+
+  const setClicked2 = () => {
+    setOpen2(!open2)
+    console.log(open2)
+  }
+
+  const setClicked3 = () => {
+    setOpen3(!open3)
+    console.log(open3)
+  }
+
+  const NotificationUI = () => {
+    return (
+      <Box
+        sx={{
+          display: open1 ? 'block' : 'none',
+          position: 'absolute',
+          zIndex: '10',
+          width: '200px',
+          height: '1',
+          backgroundColor: 'white',
+          color: 'black',
+          border: '1',
+          top: '50px',
+          py: '35px',
+          px: '20px'
+        }} 
+      >
+      <Typography component='span' variant='span'> tidak adanya notifikasi </Typography>
+    </Box>
+    )
+  }
+
+  const CartUI = () => {
+    return (
+      <Box
+        component='div'
+        sx={{
+          display: open2 ? 'block' : 'none',
+          position: 'absolute',
+          zIndex: '10',
+          width: '200px',
+          height: '1',
+          backgroundColor: 'white',
+          color: 'black',
+          border: '1',
+          top: '50px',
+          py: '35px',
+          px: '20px'
+        }} 
+      >
+        <Typography  component='span' variant='span'> Keranjang Anda Kosong </Typography>
+      </Box>
+    )
+  }
+
+  const MenuUI = () => {
+    return (
+        <Box 
+            component='div' 
+            sx={{ 
+                  display: open3 ? 'block' : 'none',
+                  position: 'absolute',
+                  zIndex: '10',
+                  height: '1',
+                  color: 'black',
+                  border: '1',
+                  top: '50px',
+                  right: '0',
+                  py: '35px',
+                  px: '20px',
+                  width: '150px', 
+                  height: '200px',
+                  bgcolor: 'white' 
+                }}
+        >
+        <nav aria-label="main mailbox folders">
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText primary="Inbox" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <DraftsIcon />
+                </ListItemIcon>
+                <ListItemText primary="Drafts" />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </nav>
+        <Divider />
+        <nav aria-label="secondary mailbox folders">
+          <List>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemText primary="Trash" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton component="a" href="#simple-list">
+                <ListItemText primary="Spam" />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </nav>
+      </Box>
+    )
+  }
+
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+    <Box sx={{ backgroundColor: '#33c9dc', color: 'white' }}>
+      <Container 
+         sx={{ 
+             display: 'flex', 
+             justifyContent: 'space-between',
+             alignItems: 'center'
+             }}
+      >
+          <Box className='box1' sx={{ color: 'black', display: {xs: 'none', sm: 'block'} }}>
+              <h1> Jualan </h1>
+          </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+          <Box className='box2'>
+            <TextField
               sx={{
-                display: { xs: 'block', md: 'none' },
+                width: {xs: '15rem', sm: '40rem'}
               }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            />
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
 
-            <Box 
-                sx={{  }}
-                className='search-input'
-             >
-
-            </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+          <Box className='box3'>
+              <Button variant='text' sx={{color: 'white'}} onClick={setClicked1} >
+                  <NotificationsIcon sx={{ p: '10px' }} />
+                  <NotificationUI />
+              </Button>
+              <Button variant='text' sx={{color: 'white'}} onClick={setClicked2}>
+                  <ShoppingBasketIcon sx={{ p: '10px' }} />
+                  <CartUI />
+              </Button>
+              <Button variant='text' sx={{color: 'white'}} onClick={setClicked3}>
+                  <AccountCircleIcon sx={{ p: '10px' }} />
+                  <MenuUI />
+              </Button>
           </Box>
-        </Toolbar>
       </Container>
-    </AppBar>
+    </Box>
   )
 }
 
