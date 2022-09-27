@@ -14,7 +14,7 @@ import {items, itemCard} from '../Data/data.js'
 function Home() {
   return (
     <Container>
-        <Box>
+        <Box component='div' sx={{ py: '50px' }}>
           <Carousel>
                 {items.map((item, i) => 
                     <Box

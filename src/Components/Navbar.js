@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { TextField, Button, Typography } from '@mui/material';
+import { TextField, Button, Typography, Link } from '@mui/material';
 
 /// Material UI Icon
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -12,11 +12,6 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
 
 function Navbar() {
   const [open1, setOpen1] = React.useState(false)
@@ -98,41 +93,19 @@ function Navbar() {
                   py: '35px',
                   px: '20px',
                   width: '150px', 
-                  height: '200px',
-                  bgcolor: 'white' 
+                  bgcolor: 'white'
                 }}
         >
         <nav aria-label="main mailbox folders">
           <List>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
+                <Link href="/signin" sx={{ textDecoration: 'none', color: 'black' }}> Sign In</Link>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  <DraftsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Drafts" />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </nav>
-        <Divider />
-        <nav aria-label="secondary mailbox folders">
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemText primary="Trash" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton component="a" href="#simple-list">
-                <ListItemText primary="Spam" />
+                <Link href="/signup" sx={{ textDecoration: 'none', color: 'black' }}> Sign Up</Link>
               </ListItemButton>
             </ListItem>
           </List>
@@ -142,7 +115,7 @@ function Navbar() {
   }
 
   return (
-    <Box sx={{ backgroundColor: '#33c9dc', color: 'white' }}>
+    <Box sx={{ backgroundColor: '#33c9dc', color: 'white', py: '20px' }}>
       <Container 
          sx={{ 
              display: 'flex', 
@@ -151,7 +124,7 @@ function Navbar() {
              }}
       >
           <Box className='box1' sx={{ color: 'black', display: {xs: 'none', sm: 'block'} }}>
-              <h1> Jualan </h1>
+              <Link href='/' sx={{ textDecoration: 'none', color: 'white', fontSize: '25px' }}> Jualan </Link>
           </Box>
 
           <Box className='box2'>
