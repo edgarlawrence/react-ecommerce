@@ -91,7 +91,6 @@ function Navbar() {
                   display: open3 ? 'block' : 'none',
                   position: 'absolute',
                   zIndex: '10',
-                  height: '1',
                   color: 'black',
                   border: '1',
                   top: '50px',

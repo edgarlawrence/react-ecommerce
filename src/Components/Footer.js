@@ -13,9 +13,11 @@ function Footer() {
         py: '30px'
       }}  
     >
+      <Typography component='span' variant='span'>
       Toko Hape <br />
       2021 Trademark Inc  <br />
       Whatsapp: 0124334243324  <br />
+      </Typography>
     </Box>
   )
 }
