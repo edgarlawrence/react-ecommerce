@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, TextField, Button, Typography } from '@mui/material'
+import { Box, TextField, Button, Typography, Link } from '@mui/material'
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function SignIn() {
@@ -14,7 +14,8 @@ const onChange = (value) => {
         sx={{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            flexWrap: 'wrap'
         }}
     >
         <Box 
@@ -31,19 +32,20 @@ const onChange = (value) => {
             component='h3'
             variant='h3'
             sx={{
-                py: '25px'
+                py: '25px',
+                textAlign: 'center'
             }}
         >
             Sign In Page
         </Typography>
-            <TextField id="standard-basic" label="Enter Username" type='text' variant="standard" 
+            <TextField id="standard-basic" label="Enter Username" type='email' variant="standard" 
                 sx={{
-                    m: '10px'
+                    m: '10px', width: '18rem'
                 }}
             /> <br />
             <TextField id="standard-basic" label="Enter Password" type='password' variant="standard" 
                 sx={{
-                    m: '10px'
+                    m: '10px', width: '18rem'
                 }}
             /> <br />
 
@@ -58,10 +60,14 @@ const onChange = (value) => {
                 type='submit'
                 variant='contained'
                 sx={{
-                    width: '50%',
-                    m: '30px'
+                    width: '100%',
+                    mx: 'auto',
+                    my: '2rem'
                 }}    
             > Sign In </Button>
+            <Box component='div' sx={{ textAlign: 'center' }}>
+                <Link href='/signup'> Belum punya akun? </Link>
+            </Box>
         </Box>
     </Box>
   )

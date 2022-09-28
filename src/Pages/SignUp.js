@@ -20,7 +20,7 @@ export default function SignUp() {
   return (
     <Box component='div'>
         <Box component='div' className='signup-title'>
-            <Typography component='h3' variant='h3' sx={{ textAlign: 'center' }}> Sign Up </Typography>
+            <Typography component='h3' variant='h3' sx={{ textAlign: 'center', pt: '3rem' }}> Sign Up </Typography>
         </Box>
         <FormControl sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', width: '50rem', mx: 'auto' }}>
             <Box component='div' sx={{ display: 'flex', flexDirection: 'column', p: '10px' }}>

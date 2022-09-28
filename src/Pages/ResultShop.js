@@ -19,7 +19,7 @@ export default function ResultShop() {
         <Container disableGutters>
             <Grid container spacing={2} sx={{ m: '10px' }}>
                 <Grid item lg={4}>
-                    <Box component='div' className='filters' sx={{ backgroundColor: 'yellow', py: '30px', px: '30px', borderRadius: '16px'}}>
+                    <Box component='div' className='filters' sx={{ backgroundColor: '#33c9dc', color: 'white', py: '30px', px: '30px', borderRadius: '16px'}}>
                     <FormGroup>
                       <Typography variant='h4' component='h4' sx={{ py: '20px' }}> Filter </Typography>
                       <FormControlLabel control={<Checkbox defaultChecked />} label="Harga Tertinggi" sx={{ p: '10px' }} />
